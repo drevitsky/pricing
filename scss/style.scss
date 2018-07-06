@@ -1,0 +1,290 @@
+@import '_normalize';
+@import '_themify-icons';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+// <!-- author:DrevitskySeva_07-07-2018-MRPL -->
+@font-face {
+ font-family: 'bebas_neuebold';
+ src: url('../fonts/webfontkit-20161116/bebasneue_bold-webfont.eot');
+ src: url('../fonts/webfontkit-20161116/bebasneue_bold-webfont.eot?#iefix') format('embedded-opentype'),
+ url('../fonts/webfontkit-20161116/bebasneue_bold-webfont.woff2') format('woff2'),
+ url('../fonts/webfontkit-20161116/bebasneue_bold-webfont.woff') format('woff'),
+ url('../fonts/webfontkit-20161116/bebasneue_bold-webfont.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+
+}
+
+@font-face {
+ font-family: 'bebas_neuelight';
+ src: url('../fonts/webfontkit-20161116/bebasneue_light-webfont.eot');
+ src: url('../fonts/webfontkit-20161116/bebasneue_light-webfont.eot?#iefix') format('embedded-opentype'),
+ url('../fonts/webfontkit-20161116/bebasneue_light-webfont.woff2') format('woff2'),
+ url('../fonts/webfontkit-20161116/bebasneue_light-webfont.woff') format('woff'),
+ url('../fonts/webfontkit-20161116/bebasneue_light-webfont.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+
+}
+
+@font-face {
+ font-family: 'bebas_neue_regular';
+ src: url('../fonts/webfontkit-20161116/bebasneue_regular-webfont.eot');
+ src: url('../fonts/webfontkit-20161116/bebasneue_regular-webfont.eot?#iefix') format('embedded-opentype'),
+ url('../fonts/webfontkit-20161116/bebasneue_regular-webfont.woff2') format('woff2'),
+ url('../fonts/webfontkit-20161116/bebasneue_regular-webfont.woff') format('woff'),
+ url('../fonts/webfontkit-20161116/bebasneue_regular-webfont.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+
+}
+
+@font-face {
+ font-family: 'bebas_neuethin';
+ src: url('../fonts/webfontkit-20161116/bebasneue_thin-webfont.eot');
+ src: url('../fonts/webfontkit-20161116/bebasneue_thin-webfont.eot?#iefix') format('embedded-opentype'),
+ url('../fonts/webfontkit-20161116/bebasneue_thin-webfont.woff2') format('woff2'),
+ url('../fonts/webfontkit-20161116/bebasneue_thin-webfont.woff') format('woff'),
+ url('../fonts/webfontkit-20161116/bebasneue_thin-webfont.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+
+}
+
+$main-font: 'bebas_neue_regular', sans-serif;
+$main-font--thin: 'bebas_neuethin', sans-serif;
+$main-font--light: 'bebas_neuelight', sans-serif;
+
+$text-font:'Roboto', sans-serif;
+$text-color: #181818;
+$offset: 30px;
+
+$red: #ff6033;
+$tourquise: #00b1b1;
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+}
+
+body {
+	font: 300 1.6rem/1.5 $text-font;
+	min-height: 100%;
+	color: $text-color;
+	background-color: #9789f9;
+}
+.main {	
+		display: flex;
+		width: 1070px;
+		margin: 0 auto;
+		justify-content: space-between;
+		align-items: center;
+		height: 100vh;
+}
+.item {
+	
+	
+	height: 610px;
+	width: 335px;
+	background-color: #f5f4f9;
+	text-align: center;
+	position: relative;
+	&__popular {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 46px;
+		height: 46px;
+		line-height: 46px;
+		text-align: center;
+		color: #fff;
+		background:#fd8d7b;
+		border-radius: 50%;
+		font-size: 24px;
+		z-index: 30;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 13px;
+			height: 13px;
+			top: -6px;
+			right: -6px;
+			background:#fd8d7b;
+			border-radius: 50%;
+			// transform: translate(190%, -50%);
+
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			top: -10px;
+			right: -10px;
+			background:#fd8d7b;
+			border-radius: 50%;
+			// transform: translate(250%, -100%);
+			
+		}
+		&:hover .item__popup {
+			opacity: 1;
+		}
+	}
+	&__popup {
+
+		background:#3b4040;
+		color: #fff;
+		font-family: $main-font;
+		font-size: 16px;
+		border-radius: 15px;
+		position: absolute;
+		left: 120%;
+		top: 50%;
+		transform: translate(0, -50%);
+		opacity: 0;
+		width: 90px;
+		line-height: 30px;
+		&:after {
+
+			content: '';
+			// width: 0px;
+			// height: 0px;
+			position: absolute;
+			left: -15px;
+			top: 5px;
+			border: 10px solid transparent;	border-right: 10px solid #3b4040;
+		}
+		// &:hover {
+		// 	opacity: 0.5;
+		// }
+	}
+	&--lg {
+		z-index: 10;
+	
+		height: 690px;
+		width: 370px;
+		position: relative;
+		
+		&:before {
+			z-index: 20;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			box-shadow: 0px 5px 59px 0 rgba(122, 107, 231, 1),				
+			inset 0px 0px 8px 2px rgba(100,100,100, 0.6);
+
+		}
+
+
+
+	}
+
+	&__price {
+		display: inline-block;
+		// width: 100px;
+		height: 55px;
+		font-family: bebas_neuethin;
+	
+		font-size:60px ;
+		line-height: 55px;
+		position: relative;
+		margin: 37px auto 0;
+		&:before {
+			content: '$';
+			font-size: 24px;
+			position: absolute;
+			top: 0;
+			left: -10px;
+			line-height: 24px;
+		}
+		&:after {
+			content: '/HR';
+			font-size: 16px;
+			position: absolute;
+			bottom: 0;
+			right:-20px;
+			line-height: 24px;
+		}
+
+
+
+		// sub,sup {font-size: 24px;}
+	}
+	&__title {
+		font-size: 24px;
+		font-family: $main-font;
+		margin-bottom: 0;
+		line-height: 1;
+	}
+	&__ti {
+		font-size: 30px;
+		
+	}
+	&__features {
+		background-image: radial-gradient(ellipse 100% 100% at bottom center, #fff 0%,#fff 90%,transparent 90%);
+		height: 68%;
+		padding: 65px;
+		position: relative;
+
+	}
+	&__list {
+		list-style-type: none;
+		text-align: left;
+		line-height: 3;
+	}
+	&__link {
+		text-transform: uppercase;
+		font-family: bebas_neuebold;
+		font-size: 1.8rem;
+		color: #fff;
+		background: #6fcffb;
+		text-decoration: none;
+		display: inline-block;
+		width: 200px;
+		height: 55px;
+		text-align: center;
+		line-height: 55px;
+		border-radius: 30px;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 50%);
+		transition: all 0.3s linear;
+		&:hover,
+		&:focus,
+		&:active {
+			transform:translate(-50%, 50%) scale(1.05);
+			box-shadow: 0px 3px 5px 0 rgba(122, 107, 231, 0.6);
+
+		}
+		&--lg {
+			z-index: 30;
+			background:#fd8d7b;
+			box-shadow: 0px 5px 18px 0 rgba(253, 141, 123, 0.31);
+			&:hover,
+			&:focus,
+			&:active {
+				transform:translate(-50%, 50%) scale(1.1);
+				box-shadow: 0px 5px 15px 2 red;  /*не отрабатывает красная тень*/
+			}
+			// transform: translate(-50%, -100%);
+		}
+
+
+	}
+	&__foot-note {
+		font-size: 11px;
+	
+		line-height: 100px;
+		color: #a9a9a9;
+	}
+}
+
